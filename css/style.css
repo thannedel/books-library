@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#canvas_container {
+  overflow: auto;
+  background: #333;
+  text-align: center;
+  height: 60%;
+}
+
+.curr-page {
+  width: 4rem;
+  height: 2rem;
+  border-radius: 4px;
+}
+#text-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: 0.2;
+  line-height: 1;
+}
+
+#text-layer > div {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0% 0%;
+}
+
+.search-box {
+  width: 12rem;
+  height: 2.51rem;
+  border-radius: 4px;
+}
+
+.button {
+  background: coral;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-around;
+  background: rgb(173, 82, 82);
+  color: #fff;
+  padding: 1rem;
+}
+
+.error {
+  background: orangered;
+  color: #fff;
+  padding: 1rem;
+}
+
+#dropDownBody {
+  height: 2.51rem;
+}

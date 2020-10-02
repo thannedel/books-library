@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="bookstore">Bookstore</div>
+
+      <form id="search-books" class="searchBox">
+        <div class="active-pink-3 active-pink-4 mb-4">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </div>
+      </form>
+    </header>
+    <div id="theBooks"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="books.js"></script>
+    <!-- <script src="./js/pdfViewer.js"></script> -->
+  </body>
+</html>

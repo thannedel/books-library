@@ -1,0 +1,92 @@
+.header {
+  background: #2ec98d;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.bookstore {
+  font-size: 40px;
+  font-family: inherit;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 20rem;
+  height: 30rem;
+  margin: 5rem;
+  perspective: 100rem;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 20rem;
+  height: 30rem;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 20rem;
+  height: 30rem;
+  backface-visibility: hidden;
+}
+
+.flip-card-back p {
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+
+.card-button {
+  width: 70%;
+  padding: 1rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: #2ec98d;
+  color: white;
+  font-family: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: rgb(15, 14, 14) !important;
+  text-decoration: none !important;
+}
+
+.card-button a:focus {
+  outline: none;
+}
+
+.flip-card-front img {
+  width: 20rem;
+  height: 30rem;
+}
+
+.flip-card-back {
+  background-color: #f3f3f3;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+#theBooks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+}
+
+.searchBox {
+  margin-top: 2.5% !important;
+}

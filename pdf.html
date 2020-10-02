@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no"
+    />
+
+    <script src="./js/pdf.js"></script>
+    <script src="./js/pdf.worker.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>PDF Viewer</title>
+  </head>
+
+  <body>
+    
+    <div id="my_pdf_viwer">
+      <div class="top-bar" id="navigation-control">
+        <div id="zoom-controls">
+          <button class="button" id="zoom_in"><i class="fas fa-plus-circle"></i></button>
+          <button class="button" id="zoom_out"><i class="fas fa-minus-circle"></i></button>
+        </div>
+        
+      <div class="pages">
+        <input type="number" class="curr-page" onfocus="this.value=''" style="text-align: right;"  value="1" id="current_page" />
+        <span id="page-num"></span>/<span id="page-count"></span>
+     </div>
+     <div class="arrow-buttons">
+      <button class="button" id="go_previous">
+        <i class="fas fa-arrow-circle-left"></i>
+      </button>
+      <button class="button" id="go_next">
+        <i class="fas fa-arrow-circle-right"></i>
+      </button>
+      </div>
+     
+         <label for="dropDownBody">
+        <select class="dropdown form-control form-control-sm" id="dropDownBody" name="states">
+
+          <option value="en-el" selected>en-el</option>
+
+        </select>
+
+         </label>
+        
+        <form id="form">
+          <label for="text"></label>
+          <input
+            type="text"
+            id="text"
+            class="search-box"
+            placeholder="Type uknown words..."
+            
+          />
+          <input
+            type="submit"
+            value="search"
+            class="button"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          ></input>
+        </form>
+      </div>
+      
+    </div>
+      <div id="canvas_container">
+        <canvas id="pdf_renderer"></canvas>
+      </div>
+      <div id="text-layer"></div>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="./js/pdfViewer.js"></script>
+  </body>
+</html>
