@@ -25,14 +25,21 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./assets/css/pdfStyle.css" />
     <title>PDF Viewer</title>
   </head>
 
   <body>
+
     
+  
+  
+   
+  
+
     <div id="my_pdf_viwer">
       <div class="top-bar" id="navigation-control">
+        
         <div id="zoom-controls">
           <button class="button" id="zoom_in"><i class="fas fa-plus-circle"></i></button>
           <button class="button" id="zoom_out"><i class="fas fa-minus-circle"></i></button>
@@ -51,31 +58,31 @@
       </button>
       </div>
      
-         <label for="dropDownBody">
-        <select class="dropdown form-control form-control-sm" id="dropDownBody" name="states">
-
-          <option value="en-el" selected>en-el</option>
-
-        </select>
-
-         </label>
+         
         
         <form id="form">
+          <label for="dropDownBody">
+            <select class="dropdown form-control form-control-sm" id="dropDownBody" name="states">
+    
+              <option value="en-el" selected>en-el</option>
+    
+            </select>
+    
+             </label>
           <label for="text"></label>
           <input
             type="text"
             id="text"
             class="search-box"
             placeholder="Type uknown words..."
-            
           />
-          <input
+          <button
             type="submit"
             value="search"
             class="button"
             data-toggle="modal"
             data-target="#exampleModal"
-          ></input>
+          ><i class="fas fa-search"></i></button>
         </form>
       </div>
       
@@ -136,6 +143,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-    <script src="./js/pdfViewer.js"></script>
+    <script src="/pdfViewer.js"></script>
   </body>
 </html>

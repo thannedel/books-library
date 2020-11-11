@@ -11,6 +11,10 @@ if (window.innerWidth <= 600) {
   myState.zoom = 0.5;
 }
 
+if (window.innerWidth >= 600 && window.innerWidth <=1024 ) {
+  myState.zoom = 1.25;
+}
+
 let url = document.location.search.replace(/^.*?\=/, '');
 
 PDFJS.getDocument({ url })
@@ -133,6 +137,14 @@ document.getElementById('zoom_out').addEventListener('click', (e) => {
 "ru-es","ru-et","ru-fi","ru-fr","ru-hu","ru-it","ru-lt","ru-lv","ru-mhr","ru-mrj","ru-nl",
 "ru-no","ru-pl","ru-pt","ru-ru","ru-sk","ru-sv","ru-tr","ru-tt","ru-uk","ru-zh","sk-en",
 "sk-ru","sv-en","sv-ru","tr-de","tr-en","tr-ru","tt-ru","uk-en","uk-ru","uk-uk","zh-ru" */
+
+/* Modal properties */
+let modalTitle = document.querySelector('.modal-title');
+let translations = document.querySelector('.modal-body');
+translations.innerHTML = '';
+modalTitle.innerHTML = '';
+
+/* fetching for dictionary*/
 function languages() {
   const languages = ['el-en', 'en-en', 'de-en', 'en-de', 'de-de'];
   languages.forEach((language) => {
@@ -148,6 +160,8 @@ languages();
 document.querySelector('#form').addEventListener('submit', (e) => {
   e.preventDefault();
   const text = document.querySelector('#text').value,
+    APIkey =
+      'dict.1.1.20200423T091725Z.f741f11e7b49bc73.d5497efee7643e9c492604ccc494e40edb685973',
     language = document.querySelector('#dropDownBody').value;
   axios
     .get(
@@ -163,15 +177,14 @@ document.querySelector('#form').addEventListener('submit', (e) => {
       console.log(res);
       dictionary();
     })
-    .catch((err) => console.error(err));
+  .catch((err) => {
+    // Display error
+  modalTitle.append('error');
+  translations.append("sorry something went wrong");
+  });
 });
 
 function dictionary() {
-  console.log(data.length);
-  let translations = document.querySelector('.modal-body');
-  translations.innerHTML = '';
-  let modalTitle = document.querySelector('.modal-title');
-  modalTitle.innerHTML = '';
   modalTitle.append(title);
 
   const wordsArray = data.map((word) => word.text);
@@ -194,3 +207,4 @@ document.getElementById('text-layer').addEventListener('dblclick', () => {
     document.getElementById('text').focus();
   });
 });
+
