@@ -6,10 +6,15 @@
 }
 
 .bookstore {
-  font-size: 40px;
+  font-size: 30px;
   font-family: inherit;
+  color: aliceblue;
 }
 
+.bookstore img {
+  width: 100px;
+  padding-top: 0.7rem;
+}
 .flip-card {
   background-color: transparent;
   width: 20rem;
@@ -87,6 +92,13 @@
   width: 100%;
 }
 
-.searchBox {
-  margin-top: 2.5% !important;
+@media only screen and (min-width: 800px) {
+  .searchBox {
+    margin-top: 3.3% !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .searchBox {
+    margin-top: 5.2% !important;
+  }
 }
