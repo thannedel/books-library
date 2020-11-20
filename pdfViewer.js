@@ -19,11 +19,13 @@ let url = document.location.search.replace(/^.*?\=/, '');
 
 PDFJS.getDocument({ url })
   .then((pdf) => {
+   
     myState.pdf = pdf;
     document.querySelector('#page-count').textContent = pdf.numPages;
     render();
   })
   .catch((err) => {
+    document.querySelector('#page-loader').style.display = 'none';
     // Display error
     const div = document.createElement('div');
     div.className = 'error';
@@ -49,6 +51,7 @@ function render() {
     page
       .render(renderContext)
       .then(() => {
+        document.querySelector('#page-loader').style.display = 'none';
         return page.getTextContent();
       })
       .then((textContent) => {
