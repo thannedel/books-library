@@ -102,3 +102,12 @@
     margin-top: 5.2% !important;
   }
 }
+
+#page-loader {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  display: none;
+  color: #999999;
+  font-size: 13px;
+}
