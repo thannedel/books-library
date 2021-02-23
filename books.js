@@ -50,11 +50,11 @@ const search = (allBooks) => {
   const searchBar = document.forms['search-books'].querySelector('input');
   searchBar.addEventListener('keyup', function (e) {
     const term = e.target.value.toLowerCase();
+    console.log(Object.keys(allBooks[0]));
     const filteredBooks = allBooks.filter(book =>             // filter books
     book.title.toLowerCase().indexOf(term) != -1 ||
     book.description.toLowerCase().indexOf(term) != -1 ||
     book.author.toLowerCase().indexOf(term) != -1);
-    
     booksList(filteredBooks);
   });
 }

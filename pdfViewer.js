@@ -163,9 +163,7 @@ languages();
 document.querySelector('#form').addEventListener('submit', (e) => {
   e.preventDefault();
   const text = document.querySelector('#text').value,
-    APIkey =
-      'dict.1.1.20200423T091725Z.f741f11e7b49bc73.d5497efee7643e9c492604ccc494e40edb685973',
-    language = document.querySelector('#dropDownBody').value;
+  language = document.querySelector('#dropDownBody').value;
   axios
     .get(
       `
